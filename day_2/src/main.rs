@@ -94,7 +94,7 @@ mod solutions {
                     true => res += 1,
                     false => {}
                 },
-            }\
+            }
         }
 
         res
