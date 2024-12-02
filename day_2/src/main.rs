@@ -1,3 +1,5 @@
+use std::env;
+
 fn get_rows(input: String) -> Vec<Vec<i32>> {
     let mut rows = vec![];
 
@@ -100,9 +102,13 @@ mod solutions {
 }
 
 fn main() {
-    let result = solutions::part_1_solution("src/input.txt");
+    let args: Vec<String> = env::args().collect();
+
+    let path = &args[1];
+
+    let result = solutions::part_1_solution(path);
     println!("{}", result);
 
-    let result = solutions::part_2_solution("src/input.txt");
+    let result = solutions::part_2_solution(path);
     println!("{}", result);
 }

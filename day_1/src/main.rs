@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use std::env;
 
 fn get_arrays(input: &String) -> (Vec<i32>, Vec<i32>) {
@@ -12,9 +13,6 @@ fn get_arrays(input: &String) -> (Vec<i32>, Vec<i32>) {
         first_array.push(first.parse::<i32>().unwrap());
         second_array.push(last.parse::<i32>().unwrap());
     }
-
-    first_array.sort();
-    second_array.sort();
 
     (first_array, second_array)
 }
@@ -36,9 +34,17 @@ fn calculate_total_distance_between_arrays(
 
 fn calculate_total_similarity_between_arrays(arrays: (Vec<i32>, Vec<i32>)) -> i32 {
     let mut res: i32 = 0;
+
+    let mut cache: HashMap<i32, i32> = HashMap::new();
+
     for value in arrays.0.iter() {
-        let count: i32 = arrays.1.iter().filter(|&n| n == value).count() as i32;
-        res += count * value;
+        if cache.get(value).is_some() {
+            res += cache.get(value).unwrap() * value;
+        } else {
+            let count: i32 = arrays.1.iter().filter(|&n| n == value).count() as i32;
+            cache.insert(*value, count);
+            res += count * value;
+        }
     }
     res
 }
@@ -48,7 +54,10 @@ mod solutions {
 
     pub fn part_1_solution(path: &str) -> i32 {
         let input = fs::read_to_string(path).expect("Cannot read txt file.");
-        let (first_array, second_array) = super::get_arrays(&input);
+        let (mut first_array, mut second_array) = super::get_arrays(&input);
+
+        first_array.sort();
+        second_array.sort();
 
         let res = super::calculate_total_distance_between_arrays(
             first_array.iter().zip(second_array.iter()),
