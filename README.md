@@ -6,3 +6,4 @@ Links:
 - [Day 3](day_3)
 - [Day 4](day_4)
 - [Day 5](day_5)
+- [Day 6](day_6)
