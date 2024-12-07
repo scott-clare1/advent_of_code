@@ -1,5 +1,5 @@
+use common::read_path;
 use std::collections::HashMap;
-use std::env;
 
 fn get_arrays(input: &String) -> (Vec<i32>, Vec<i32>) {
     let mut first_array = vec![];
@@ -75,15 +75,11 @@ mod solutions {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let path = read_path();
 
-    let path = &args[1];
-
-    println!("{}", path);
-
-    let result = solutions::part_1_solution(path.as_str());
+    let result = solutions::part_1_solution(&path);
     println!("{}", result);
 
-    let result = solutions::part_2_solution(path.as_str());
+    let result = solutions::part_2_solution(&path);
     println!("{}", result);
 }

@@ -1,3 +1,4 @@
+use common::read_path;
 use std::collections::VecDeque;
 
 #[derive(Debug)]
@@ -179,11 +180,12 @@ mod solutions {
 }
 
 fn main() {
-    let solution = solutions::part_1_solution("src/input.txt");
+    let path = read_path();
+
+    let solution = solutions::part_1_solution(&path);
 
     println!("{solution}");
-
-    let solution = solutions::part_2_solution("src/input.txt");
+    let solution = solutions::part_2_solution(&path);
 
     println!("{solution}");
 }

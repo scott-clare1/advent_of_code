@@ -1,3 +1,5 @@
+use common::read_path;
+
 fn count_terms(mut chars: Vec<char>) -> usize {
     let mut res = 0;
 
@@ -212,11 +214,13 @@ mod solutions {
 }
 
 fn main() {
-    let solution = solutions::part_1_solution("src/input.txt");
+    let path = read_path();
+
+    let solution = solutions::part_1_solution(&path);
 
     println!("{solution}");
 
-    let solution = solutions::part_2_solution("src/mock.txt");
+    let solution = solutions::part_2_solution(&path);
 
     println!("{solution}");
 }

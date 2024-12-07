@@ -1,3 +1,5 @@
+use common::read_path;
+
 fn traverse_down(
     grid: &Vec<Vec<char>>,
     mut visited: Vec<(usize, usize)>,
@@ -281,11 +283,13 @@ mod solutions {
 }
 
 fn main() {
-    let solution = solutions::part_1_solution("src/mock.txt");
+    let path = read_path();
+
+    let solution = solutions::part_1_solution(&path);
 
     println!("{solution}");
 
-    let solution = solutions::part_2_solution("src/input.txt");
+    let solution = solutions::part_2_solution(&path);
 
     println!("{solution}");
 }

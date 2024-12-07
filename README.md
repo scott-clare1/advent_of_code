@@ -8,3 +8,9 @@ Links:
 - [Day 5](day_5)
 - [Day 6](day_6)
 - [Day 7](day_7)
+
+## How to run:
+
+```
+cargo run --bin day_X -- src/day_X/input.txt
+```

@@ -1,3 +1,4 @@
+use common::read_path;
 use std::collections::HashMap;
 
 fn build_update_map(page_orders: Vec<(i32, i32)>) -> HashMap<i32, Vec<i32>> {
@@ -178,11 +179,13 @@ mod solutions {
 }
 
 fn main() {
-    let solution = solutions::part_1_solution("src/mock.txt");
+    let path = read_path();
+
+    let solution = solutions::part_1_solution(&path);
 
     println!("{solution}");
 
-    let solution = solutions::part_2_solution("src/input.txt");
+    let solution = solutions::part_2_solution(&path);
 
     println!("{solution}");
 }

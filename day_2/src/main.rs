@@ -1,3 +1,4 @@
+use common::read_path;
 use std::env;
 
 fn get_rows(input: String) -> Vec<Vec<i32>> {
@@ -102,13 +103,11 @@ mod solutions {
 }
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let path = read_path();
 
-    let path = &args[1];
-
-    let result = solutions::part_1_solution(path);
+    let result = solutions::part_1_solution(&path);
     println!("{}", result);
 
-    let result = solutions::part_2_solution(path);
+    let result = solutions::part_2_solution(&path);
     println!("{}", result);
 }
