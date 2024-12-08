@@ -1,4 +1,4 @@
-use common::read_path;
+use common::{build_grid, read_path};
 
 fn count_terms(mut chars: Vec<char>) -> usize {
     let mut res = 0;
@@ -176,19 +176,6 @@ fn find_mas(grid: Vec<Vec<char>>) -> usize {
         }
     }
     res
-}
-
-fn build_grid(input: String) -> Vec<Vec<char>> {
-    let mut grid = vec![];
-
-    for line in input.lines() {
-        let mut row = vec![];
-        for char in line.to_string().chars() {
-            row.push(char);
-        }
-        grid.push(row);
-    }
-    grid
 }
 
 mod solutions {

@@ -1,6 +1,6 @@
 # Advent of Code :christmas_tree:
 
-Links:
+## Links:
 - [Day 1](day_1)
 - [Day 2](day_2)
 - [Day 3](day_3)
@@ -8,6 +8,7 @@ Links:
 - [Day 5](day_5)
 - [Day 6](day_6)
 - [Day 7](day_7)
+- [Day 8](day_8)
 
 ## How to run:
 

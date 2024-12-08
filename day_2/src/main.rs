@@ -1,5 +1,4 @@
 use common::read_path;
-use std::env;
 
 fn get_rows(input: String) -> Vec<Vec<i32>> {
     let mut rows = vec![];

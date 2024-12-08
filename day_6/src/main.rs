@@ -1,4 +1,4 @@
-use common::read_path;
+use common::{build_grid, read_path};
 
 fn traverse_down(
     grid: &Vec<Vec<char>>,
@@ -90,19 +90,6 @@ fn traverse_left(
     }
 
     (visited, terminate)
-}
-
-fn build_grid(input: String) -> Vec<Vec<char>> {
-    let mut grid = vec![];
-
-    for line in input.lines() {
-        let mut row = vec![];
-        for c in line.chars() {
-            row.push(c);
-        }
-        grid.push(row);
-    }
-    grid
 }
 
 fn find_start_location(grid: &Vec<Vec<char>>) -> (usize, usize) {
